@@ -10,6 +10,10 @@
 
 @interface FISCar : FISVehicle
 
-//code goes here
+//Intializers
+
+-(instancetype)init;
+
+-(instancetype)initWithWeight:(CGFloat)weight topSpeed:(CGFloat)topSpeed currentSpeed:(CGFloat)currentSpeed currentDirection:(CGFloat)currentDirection;
 
 @end
