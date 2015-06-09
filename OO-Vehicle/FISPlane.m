@@ -10,41 +10,40 @@
 
 @implementation FISPlane
 
-//Intializers
--(instancetype)init
-{
-    return [self initWithWeight:255000 topSpeed:614 currentSpeed:0 currentDirection:0 topAltitude:30000 currentAltitude:0];
-}
-
 
 -(instancetype)initWithWeight:(CGFloat)weight topSpeed:(CGFloat)topSpeed currentSpeed:(CGFloat)currentSpeed currentDirection:(CGFloat)currentDirection topAltitude:(CGFloat)topAltitude currentAltitude:(CGFloat)currentAltitude
 {
-    self = [super initWithWeight:weight topSpeed:topSpeed currentSpeed:currentSpeed currentDirection:currentDirection];
+    self = [super init];
     
-    if (self)
-        
-        {
-            _currentAltitude = currentAltitude;
-            _topAltitude = topAltitude;
-        }
+    if (self) {
+        _currentAltitude = currentAltitude;
+        _topAltitude = topAltitude;
+        self.weight = weight;
+        self.topSpeed = topSpeed;
+        self.currentSpeed = currentSpeed;
+        self.currentDirection = currentDirection;
+    }
     
     return self;
 }
 
-//Instance Methods
+-(instancetype)init
+{
+    return [self initWithWeight:255000.0 topSpeed:614.0 currentSpeed:0.0 currentDirection:0.0 topAltitude:30000.0 currentAltitude:0.0];
+}
+
 
 -(void)increaseAltitude
-
 {
-    
-    self.currentAltitude = self.topAltitude;
-
+    self.currentAltitude += self.topAltitude;
 }
 
 
 -(void)decreaseAltitude
 {
-    self.currentAltitude = 0;
+    self.currentAltitude -= 0;
 }
+
+
 
 @end

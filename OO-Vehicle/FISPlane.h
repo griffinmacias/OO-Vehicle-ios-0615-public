@@ -10,21 +10,17 @@
 
 @interface FISPlane : FISVehicle
 
-//Properties
-
 @property (nonatomic) CGFloat currentAltitude;
-
 @property (nonatomic) CGFloat topAltitude;
 
-//Methods
+-(instancetype)initWithWeight:(CGFloat)weight topSpeed:(CGFloat)topSpeed currentSpeed:(CGFloat)currentSpeed currentDirection:(CGFloat)currentDirection topAltitude:(CGFloat)topAltitude currentAltitude:(CGFloat)currentAltitude;
+
 
 -(void)increaseAltitude;
-
 -(void)decreaseAltitude;
 
-//Intializers
 
--(instancetype)init;
 
--(instancetype)initWithWeight:(CGFloat)weight topSpeed:(CGFloat)topSpeed currentSpeed:(CGFloat)currentSpeed currentDirection:(CGFloat)currentDirection topAltitude:(CGFloat)topAltitude currentAltitude:(CGFloat)currentAltitude;
+
+
 @end

@@ -10,74 +10,63 @@
 
 @implementation FISVehicle
 
-//Intializers
-
 -(instancetype)initWithWeight:(CGFloat)weight topSpeed:(CGFloat)topSpeed currentSpeed:(CGFloat)currentSpeed currentDirection:(CGFloat)currentDirection
-
 {
-    if (self = [super init])
+    self = [super init];
     
-    {
-        
+    if (self) {
         _weight = weight;
         _topSpeed = topSpeed;
-        _currentSpeed = currentSpeed;
+        _currentSpeed = currentDirection;
         _currentDirection = currentDirection;
-        
     }
     
     return self;
 }
 
--(instancetype)init
 
+- (instancetype)init
 {
     return [self initWithWeight:0 topSpeed:0 currentSpeed:0 currentDirection:0];
-
 }
 
-//Instance Methods
 
 -(void)increaseSpeed
-
 {
-    
-    self.currentSpeed = self.topSpeed;
-
+    self.currentSpeed += self.topSpeed;
 }
 
 -(void)brake
-
 {
-    
-    self.currentSpeed = 0;
-
+    self.currentSpeed -= 0;
 }
 
 -(void)turnLeft
-
 {
-    if (self.currentDirection == 0) {
-      
-        self.currentDirection = 270;
-        
-        return;
+        self.currentDirection -= 90;
+    
+    if (self.currentDirection > 360) {
+        self.currentDirection -= 360;
     }
     
-    self.currentDirection -= 90;
+    if (self.currentDirection < 0) {
+        self.currentDirection += 360;
+    }
 }
 
 -(void)turnRight
 {
-    if (self.currentDirection == 270) {
-        
-        self.currentDirection = 0;
-        
-        return;
+    self.currentDirection += 90;
+    
+    if (self.currentDirection > 359) {
+        self.currentDirection -= 360;
     }
     
-    self.currentDirection += 90;
+    if (self.currentDirection < 0) {
+        self.currentDirection += 360;
+    }
+    
+    
 }
-
 
 @end

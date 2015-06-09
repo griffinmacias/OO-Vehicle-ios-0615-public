@@ -20,12 +20,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    FISRaceCar *car = [[FISRaceCar alloc] initWithWeight:1270 topSpeed:614 currentSpeed:100 currentDirection:47];
-    
-    NSLog(@"The race car details Weight %f, Top Speed:%f Current Speed:%f Current Direction:%f", car.weight, car.topSpeed, car.currentSpeed, car.currentDirection);
-    FISPlane *plane = [[FISPlane alloc] initWithWeight:255000 topSpeed:614 currentSpeed:400 currentDirection:15 topAltitude:30000 currentAltitude:25000];
-    
-    NSLog(@"The plane details Weight:%f, Top Speed:%f, Current Speed:%f, Current Direction:%f, Top Altitude:%f, Current Altitude:%f", plane.weight, plane.topSpeed, plane.currentSpeed, plane.currentDirection, plane.topAltitude, plane.currentAltitude);
     return YES;
 }
 
